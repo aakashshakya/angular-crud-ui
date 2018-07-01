@@ -1,0 +1,19 @@
+<br>
+<div class="col-md-4">
+    <form class="form" id="person-form" ng-submit="submit()">
+        <input type="hidden" name="id" value="{{person.id}}" />
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" class="form-control" name="fullName" placeholder="Enter your full name" required value={{person.fullName}} /> <br>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" placeholder="Enter your email" required value="{{person.email}}" /> <br>
+        </div>
+        <div class="form-group">
+            Select your gender: <br>
+            Male: <input type="radio" name="gender" value="Male" required ng-model="person.gender" /> Female: <input type="radio" name="gender" value="Female" ng-model="person.gender" /><br>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-success" />
+    </form>
+</div>

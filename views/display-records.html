@@ -1,0 +1,31 @@
+<br>
+<input type="text" ng-model="search" placeholder="Search By Name" /><br>
+<table class="table table-stripped">
+    <tr>
+        <th ng-click="orderByFunction('id')">id</th>
+        <th ng-click="orderByFunction('name')">Full Name</th>
+        <th>Email</th>
+        <th ng-click="orderByFunction('gender')">Gender</th>
+        <th>Actions</th>
+    </tr>
+    <tr ng-repeat="person in people | orderBy : myOrderBy |filter : search">
+        <td>{{person.id}}</td>
+        <td>{{person.fullName}}</td>
+        <td>{{person.email}}</td>
+        <td>{{person.gender}}</td>
+        <td>
+            <a ui-sref="updateRecord({personId: {{person.id}}})" class="btn btn-warning">Update</a>
+            <button ng-click="deleteRecord(person)" class="btn btn-danger">Delete</button>
+        </td>
+    </tr>
+</table>
+<!--
+<nav aria-label="Page navigation example">
+  <ul class="pagination pull-right">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    
+      <li class="page-item" ><a class="page-link" href="#">1</a></li>
+    
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>-->
